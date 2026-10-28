@@ -39,6 +39,36 @@ This repository contains the **React + Vite + Tailwind CSS + Zustand** frontend,
 * Node.js (v18 or higher installed)
 * Running Backend instance (`fatoorah-backend` on port 8080)
 
+* Install dependencies:
+
+Bash
+npm install
+Configure Environment Variables:
+Create a .env file in the root directory:
+
+Code snippet
+VITE_API_URL=http://localhost:8080/api/v1
+Run Development Server:
+
+Bash
+npm run dev
+Open http://localhost:5173 in your browser.
+
+🌐 Live Production Deployment
+Frontend (Netlify): https://fatoora-pro-ksa.netlify.app
+
+Backend API (Render): Connected via Spring Boot REST Gateway (/api/v1/bootstrap)
+
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Developed by Mohd Shahvez | Al-Madinah Tech Solutions Co.
+
+
+---
+
+Bhai isko copy karke apne frontend folder mein `README.md` bana lena aur push kar dena, GitHub repository par ekdum professional look aa jayega!
+
 ### Installation
 
 1. **Clone the repository**:
