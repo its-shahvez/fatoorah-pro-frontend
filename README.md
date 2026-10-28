@@ -1,42 +1,47 @@
-# 🛡️ SAMA-Guard AI (Saudi Financial Crime & AML Prevention Platform)
+# 🇸🇦 Fatoorah Pro - Saudi ZATCA Phase 2 E-Invoicing System (Frontend)
 
-> A production-grade Enterprise AML (Anti-Money Laundering) Compliance & SAFIU Reporting prototype built specifically for Saudi financial institutions, leveraging a strict deterministic Java rule engine and real-time AI RAG streaming.
+**Fatoorah Pro** is a modern, enterprise-grade, bilingual (English & Arabic) web application designed for Saudi businesses to seamlessly generate, sign, and manage ZATCA Phase 2 (E-Invoicing Wave 2 Integration) compliant tax and simplified invoices.
 
-🌐 **Live Website / Demo:** [https://fatoora-pro-ksa.netlify.app/](https://fatoora-pro-ksa.netlify.app/)
-
----
-
-## 🌟 Key Architecture Principle: Zero Hallucination in Scoring
-
-In banking compliance, AI hallucinations on risk decisions are unacceptable. **SAMA-Guard AI** strictly separates concerns:
-1. **Deterministic Rule Engine (Pure Java):** 100% of risk scoring, threshold checks (<50,000 SAR structuring), and velocity anomaly detection are processed natively by Java service layers.
-2. **Spring AI + Gemini RAG:** Generative AI is restricted entirely to retrieving Saudi Central Bank (SAMA) AML/CTF Guide articles and streaming audit-ready Suspicious Activity Report (SAR) narratives.
+This repository contains the **React + Vite + Tailwind CSS + Zustand** frontend, integrated with a secure Java Spring Boot backend featuring BouncyCastle ECDSA (`secp256k1`) cryptography, UBL 2.1 XML generation, SHA-256 hash-chaining, and TLV QR code generation.
 
 ---
 
-## 🚀 Tech Stack
+## 🌟 Key Features
 
-* **Frontend:** React 18, Vite, Tailwind CSS, Lucide Icons
-* **Backend (Companion Service):** Java 17+, Spring Boot 3.x, Spring AI (Gemini RAG), PostgreSQL (10-Year Statutory Retention Design)
-* **Integration & Streaming:** Server-Sent Events (SSE `Flux<String>`) for typewriter streaming UI
-* **Compliance Standards:** SAMA AML/CTF Guidelines, SARIE / Mada / SADAD payment rail markers, SAFIU XML Export standards
-
----
-
-## ✨ Core Features Included
-
-* **Executive Landing Page:** Clean Saudi enterprise white-theme design with an English / Arabic (RTL) toggle.
-* **Interactive Rule Simulator:** Test transaction amounts against strict SAMA 50,000 SAR threshold rules instantly.
-* **Live Investigation Command Center:** Alert queue with risk scores, SLAs, and countdown timers.
-* **Payment Rail Evidence Table:** Detailed breakdown of underlying SARIE, Mada, and SADAD transactions preserving original Arabic merchant metadata.
-* **AI SAR Narrative Stream:** Real-time simulated streaming copilot with SAMA RAG article citations.
-* **SAFIU XML Export & Preview:** Generate and preview valid official STR XML compliance reports directly in the browser.
-* **Immutable Audit Trail:** Track human compliance officer sign-offs (Approve/Reject) with 10-year statutory retention logs.
+* **Bilingual Support (English & Arabic with Full RTL Toggle)**: Instant interface switching with dynamic directional layouts tailored for Saudi Arabia.
+* **Dual Invoice Types**:
+  * **Standard B2B Tax Invoices** (with Buyer VAT, Building No, Postal Code, and National Address).
+  * **Simplified B2C Tax Invoices** (for retail and POS terminals).
+* **Live ZATCA TLV QR Code Generator**: Automatically encodes Tag 1 to Tag 8 binary TLV structures (Seller Name, VAT Number, Timestamp, Total, VAT Total, XML Hash, Digital Signature, and Public Key).
+* **Cryptographic Hash-Chain Ledger (PIH & ICV)**: Tracks sequential Invoice Counter Values (ICV) and links each invoice's SHA-256 hash to the previous invoice's hash (PIH) to detect any database tampering.
+* **ZATCA Cryptographic Hub**:
+  * Live Tamper Simulator (detects unauthorized ledger modifications).
+  * CSID Onboarding & Renewal via OTP.
+* **VAT Return Form-01 Report**: Automated calculation of Box 1 through Box 14 tax liabilities.
+* **AI Fiscal Copilot**: Natural language assistant to parse orders, inspect liabilities, and draft compliance reports.
+* **Role-Based Access Control & Team Settings**: Manage organizational profiles, branch addresses, and administrative users.
 
 ---
 
-## 📦 Local Setup & Running
+## 🛠️ Tech Stack
 
-1. Clone the repository:
+* **Framework**: React 18 + Vite (TypeScript)
+* **State Management**: Zustand
+* **Styling**: Tailwind CSS & Lucide Icons
+* **API Integration**: RESTful service connected to Spring Boot 3.3.5 backend
+* **Deployment**: Netlify (Frontend) + Render (Backend)
+
+---
+
+## 🚀 Getting Started Locally
+
+### Prerequisites
+* Node.js (v18 or higher installed)
+* Running Backend instance (`fatoorah-backend` on port 8080)
+
+### Installation
+
+1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/your-username/sama-aml-project.git](https://github.com/your-username/sama-aml-project.git)
+   git clone [https://github.com/its-shahvez/fatoorah-pro-frontend.git](https://github.com/its-shahvez/fatoorah-pro-frontend.git)
+   cd fatoorah-pro-frontend
