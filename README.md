@@ -62,16 +62,6 @@ Backend API (Render): Connected via Spring Boot REST Gateway (/api/v1/bootstrap)
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Developed by Mohd Shahvez | Al-Madinah Tech Solutions Co.
+Developed by Mohd Shahvez 
 
 
----
-
-Bhai isko copy karke apne frontend folder mein `README.md` bana lena aur push kar dena, GitHub repository par ekdum professional look aa jayega!
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone [https://github.com/its-shahvez/fatoorah-pro-frontend.git](https://github.com/its-shahvez/fatoorah-pro-frontend.git)
-   cd fatoorah-pro-frontend
